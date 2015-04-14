@@ -1,0 +1,13 @@
+{
+  "name": "database",
+  "description": "Example role",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+
+  "run_list": [
+    "recipe[mariadb_chef::default]"
+  ],
+
+  "override_attributes": {
+  }
+}
