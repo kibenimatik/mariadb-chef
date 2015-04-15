@@ -1,6 +1,6 @@
 {
-  "id": "test2",
-  "name": "another_database",
-  "encoding": "utf8",
-  "collation": "utf8_general_ci"
+  "id": "test2", // required by Chef, should be uniq
+  "name": "another_database", //database name, required
+  "encoding": "utf8", // optional
+  "collation": "utf8_general_ci" //optional
 }

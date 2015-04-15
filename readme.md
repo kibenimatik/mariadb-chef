@@ -1,23 +1,49 @@
-# MariaDB-chef
+MariaDB-chef
+======
 
 This cookbook contains all required stuffs to run mariadb-server and some stuff to manage database and users. It is assumed that will be used as part of another cookbook.
 
 
-## DEPENDENCIES
+DEPENDENCIES
+-------
 
-* [mariadb](https://supermarket.chef.io/cookbooks/mariadb) - installs mariadb-server package, [source](https://github.com/sinfomicien/mariadb)
-* [database](https://supermarket.chef.io/cookbooks/database) - provides LWRPs to manage databases and users, [source](https://github.com/opscode-cookbooks/database)
-* [mysql2_chef_gem](https://supermarket.chef.io/cookbooks/mysql2_chef_gem) - installs Ruby `mysql2` gem, required by `database` cookbook, [source](https://github.com/sinfomicien/mysql2_chef_gem)
+* [mariadb](https://supermarket.chef.io/cookbooks/mariadb) - installs mariadb-server package ([source](https://github.com/sinfomicien/mariadb))
+* [database](https://supermarket.chef.io/cookbooks/database) - provides LWRPs to manage databases and users ([source](https://github.com/opscode-cookbooks/database))
+* [mysql2_chef_gem](https://supermarket.chef.io/cookbooks/mysql2_chef_gem) - installs Ruby `mysql2` gem, required by `database` cookbook ([source](https://github.com/sinfomicien/mysql2_chef_gem))
 
 
-## COOKBOOK ATTRIBUTES
+COOKBOOK CUSTOMIZATION
+-----------
 
-See `mariadb` cookbooks attributes. Also
+See `mariadb` cookbooks attributes for configuring MariaDB server.
 
 `['mariadb_chef']['database_data_bag_name']` - name of data_bag folder where database items are stored, default is "databases"
 `default['mariadb_chef']['user_data_bag_name']` - name of data_bag folder where user items are stored, default is "users"
 
+### Sample database item
+`/data_bags/databases/db1.json`
+```json
+{
+  "id": "db1", // required
+  "name": "another_database", //database name, required
+  "encoding": "utf8", // optional
+  "collation": "utf8_general_ci" //optional
+}
 
+```
+
+### Sample user item
+`/data_bags/databases/user1.json`
+```json
+{
+  "id": "user1", // required
+  "username": "alex", // required
+  "password": "123456", // required
+  "host": "%", // optional, default is 'localhost'
+  "database_name": "test_database", // optional, default is 'all'
+  "privileges": ["select","update","insert"] // optional, array, default is ['all']
+}
+```
 
 
 ## GETTING STARTED
@@ -27,9 +53,13 @@ See `mariadb` cookbooks attributes. Also
 * `$ bundle install`
 * `$ berks install`
 
-## USAGE
+### prepare server
+* Edit `roles/database.json` or create another role
+* Copy `nodes/127.0.0.1.json` to `nodes/server.com.json` and edit it if needed
+* Ensure that you have root access or sudo rights to your server, also you may copy your public ssh key to avoid password prompt
+* Run `knife solo prepare root@yourserver.com`
 
-### Cook
+### Cook recipe
 
 * `$ knife solo cook root@yourserver.com`
 

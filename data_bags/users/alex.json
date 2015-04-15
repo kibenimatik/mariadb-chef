@@ -1,8 +1,8 @@
 {
-  "id": "alex",
-  "username": "alex",
-  "password": "123456",
-  "host": "%",
-  "database_name": "test_database",
-  "privileges": ["select","update","insert"]
+  "id": "alex", // required
+  "username": "alex", // required
+  "password": "123456", // required
+  "host": "%", // optional, default is 'localhost'
+  "database_name": "test_database", // optional, default is 'all'
+  "privileges": ["select","update","insert"] // optional, array, default is ['all']
 }
