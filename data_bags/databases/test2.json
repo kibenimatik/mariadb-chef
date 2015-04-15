@@ -1,0 +1,6 @@
+{
+  "id": "test2",
+  "name": "another_database",
+  "encoding": "utf8",
+  "collation": "utf8_general_ci"
+}
