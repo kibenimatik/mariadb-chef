@@ -1,5 +1,4 @@
 DEPENDENCIES
-  apt
   database (~> 4.0.5)
   mariadb (~> 0.3.0)
   mysql2_chef_gem (~> 1.0.1)
