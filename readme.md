@@ -63,13 +63,15 @@ That is all, now chef-solo can work both with encrypted and unencrypted data bag
 1) Set environment variable `EDITOR` to some console editor like vim
 `export EDITOR=$(which vim)`
 2) Create user data bag item "dylan" (/data_bags/users/dylan.json)
-`knife solo create data bag users dylan`
+`knife solo data bag create users dylan`
 3) Data bag will be created and encrypted after exiting from editor
 
 
 #### How to edit encrypted data bag item
 1) Set environment variable `EDITOR`
+
 2) Edit data bag item "alex" (/data_bags/users/alex.json)
+`knife solo data bag edit users dylan`
 3) Save file
 
 For more information about using encrypted data bags see https://github.com/thbishop/knife-solo_data_bag
