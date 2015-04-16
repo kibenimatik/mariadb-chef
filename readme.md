@@ -45,6 +45,38 @@ See `mariadb` cookbooks attributes for configuring MariaDB server.
 }
 ```
 
+Encryption
+----------
+
+Here is suggested setup to encrypt data_bags.
+
+1) Generate secret key
+`openssl rand -base64 512 > ~/encrypted_data_bag_secret`
+
+2) Edit `.chef/knife.rb`, set full path to generated secret file
+`encrypted_data_bag_secret "/Users/timur/encrypted_data_bag_secret"`
+
+That is all, now chef-solo can work both with encrypted and unencrypted data bag items.
+
+#### How to create encrypted data bag item
+
+1) Set environment variable `EDITOR` to some console editor like vim
+`export EDITOR=$(which vim)`
+2) Create user data bag item "dylan" (/data_bags/users/dylan.json)
+`knife solo create data bag users dylan`
+3) Data bag will be created and encrypted after exiting from editor
+
+
+#### How to edit encrypted data bag item
+1) Set environment variable `EDITOR`
+2) Edit data bag item "alex" (/data_bags/users/alex.json)
+3) Save file
+
+For more information about using encrypted data bags see https://github.com/thbishop/knife-solo_data_bag
+
+
+NOTE: For demonstration purpose Knife is already configured to work with commmited `encrypted_data_bag_secret` file
+
 
 ## GETTING STARTED
 

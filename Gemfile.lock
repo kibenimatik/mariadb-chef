@@ -85,6 +85,7 @@ GEM
       chef (>= 10.12)
       erubis (~> 2.7.0)
       net-ssh (>= 2.2.2, < 3.0)
+    knife-solo_data_bag (1.1.0)
     libyajl2 (1.2.0)
     method_source (0.8.2)
     mime-types (2.4.3)
@@ -199,3 +200,4 @@ DEPENDENCIES
   berkshelf
   chef
   knife-solo
+  knife-solo_data_bag

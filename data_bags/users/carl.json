@@ -1,0 +1,33 @@
+{
+  "id": "carl",
+  "username": {
+    "encrypted_data": "bZ0dkh23DzpVXrUvFjeeikwdgQOUfIWGgy1SfTlwBCk=\n",
+    "iv": "YXsl7c/cuaOG9G8pgYLo0g==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "password": {
+    "encrypted_data": "E129CFWS7IPZDG4vN8mydpZOKM8wb/TxUOAeG3NWGf8=\n",
+    "iv": "PZXjs2HPoVsM0rvdXAzXOA==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "host": {
+    "encrypted_data": "EHjnmbET90D54l1yEiX8Efnk95Wyn0JbTg/nyKBBw20=\n",
+    "iv": "DeQGUs9qEpbLK8JIk0NDzA==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "database_name": {
+    "encrypted_data": "H3KiFWBU78YZvI4PUMUeecK9RKqzYTDh3+XMjNbi5S3vEOctB2yb70+Hvv7M\nW5bN\n",
+    "iv": "MWMG2zv4ByNlLKwiXFYCmA==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "privileges": {
+    "encrypted_data": "YV7nzYZXMtC1bG946jfAuVzXpbaQYu8H54RsCdJzd0YMy5QgZJKOxjyWCq3B\ndRZC\n",
+    "iv": "qDcVTdoX0yU4rCZ2cXukMQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}
